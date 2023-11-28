@@ -17,18 +17,7 @@ namespace WebApplication1.Data
         {
 
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Job>().HasMany(j => j.NextJobs).WithMany();
-
-           /* modelBuilder.Entity<JobLink>()
-               .HasKey(jl => new { jl.JobId, jl.NextJobId });
-
-            modelBuilder.Entity<JobLink>()
-                .HasOne(jl => jl.Job)
-                .WithMany(j => j.NextJobLinks)
-                .HasForeignKey(jl => jl.JobId)
-                .OnDelete(DeleteBehavior.Restrict);*/
-
-     
+            modelBuilder.Entity<Job>().HasMany(j => j.NextJobs).WithMany();    
         }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
